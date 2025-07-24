@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ColorFlow - Palette generator</title>
+
+    </head>
+    <body>
+
+        <nav id="action-nav">
+          <div class="color-picker-container btn" id="picker-box" titlehover="select a base color">
+            <div class="o-hidden">
+              <input id="base-color-picker" type="color" value="#4CADFF" class="color-inputs" />
+            </div>
+          </div>
+          <button id="gen-btn" class="btn" titlehover="random palette">
+            <span class="icon">
+              <img src="./assets/icons/shuffle.svg"/>
+            </span>
+          </button>
+          <button id="switch-mode-btn" class="btn btn-overlay" titlehover="switch mode">
+            <div>
+              <span class="icon">
+                <img src="./assets/icons/aperture.svg"/>
+              </span>
+            </div>
+          </button>
+          <button id="plus-btn" class="btn" titlehover="more colors">
+            <span class="icon">
+              <img src="./assets/icons/plus.svg"/>
+            </span>
+          </button>
+          <button id="minus-btn" class="btn" titlehover="less colors">
+            <span class="icon">
+              <img src="./assets/icons/minus.svg"/>
+            </span>
+          </button>
+
+          <div class="menu-btn">
+            <button id="download-btn" class="btn" titlehover="download palette">
+              <span class="icon">
+                <img src="./assets/icons/download.svg"/>
+              </span>
+            </button>
+            <div class="modern-select" id="file-export-select">
+              <button id="json-download-btn" class="btn-inner btn">
+                <span class="icon">
+                  <img src="./assets/icons/code.svg"/>
+                </span>
+                <span class="btn-desc">json</span>    
+              </button>
+
+              <button id="csv-download-btn" class="btn-inner btn">
+                <span class="icon">
+                  <img src="./assets/icons/table.svg"/>
+                </span>
+                <span class="btn-desc">csv</span>    
+              </button>
+              <button id="pdf-download-btn" class="btn-inner btn">
+                <span class="icon">
+                  <img src="./assets/icons/printer.svg"/>
+                </span>
+                <span class="btn-desc">pdf</span>    
+              </button>
+              <!-- <button id="png-download-btn" class="btn-inner btn">
+                <span class="icon">
+                  <img src="./assets/icons/image.svg"/>
+                </span>
+                <span class="btn-desc">png</span>    
+              </button> -->
+
+            </div>
+
+          </div>
+
+          <button id="open-file-btn" class="btn" titlehover="load a palette">
+            <span class="icon">
+              <img src="./assets/icons/upload.svg"/>
+            </span>
+            <input type="file" id="open-file-input"/>
+          </button>
+
+          <button id="print-btn" class="btn" titlehover="print">
+            <span class="icon">
+              <img src="./assets/icons/printer.svg"/>
+            </span>
+          </button>
+
+          
+        </nav>
+        <div class="palette-output">
+            <div class="palette-column"></div>
+            <div class="palette-column"></div>
+            <div class="palette-column"></div>
+            <div class="palette-column"></div>
+            <div class="palette-column"></div>
+        </div>
+
+        
+
+        <!-- <script src="./jquery-3.7.1.min.js"></script> -->
+        <script src="script.js" type="module" defer></script>
+
+    </body>
+</html>
