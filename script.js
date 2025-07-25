@@ -37,7 +37,7 @@ class mainapp{
 
     this.pdfButton = document.getElementById('pdf-download-btn');
     this.printButton = document.getElementById('print-btn');
-    this.pdfButton.addEventListener('click',this.eventsmanager.printButton);
+    this.pdfButton.addEventListener('click',this.eventsmanager.pdfButton);
     this.printButton.addEventListener('click',this.eventsmanager.printButton);
 
     this.jsonBtn = document.getElementById('json-download-btn');

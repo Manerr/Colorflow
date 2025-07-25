@@ -1,109 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+		<head>
 
-        <link rel="stylesheet" href="style.css" type="text/css"/>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ColorFlow - Palette generator</title>
 
-    </head>
-    <body>
+			<link rel="stylesheet" href="style.css" type="text/css"/>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>ColorFlow - Palette generator</title>
 
-        <nav id="action-nav">
-          <div class="color-picker-container btn" id="picker-box" titlehover="select a base color">
-            <div class="o-hidden">
-              <input id="base-color-picker" type="color" value="#4CADFF" class="color-inputs" />
-            </div>
-          </div>
-          <button id="gen-btn" class="btn" titlehover="random palette">
-            <span class="icon">
-              <img src="./assets/icons/shuffle.svg"/>
-            </span>
-          </button>
-          <button id="switch-mode-btn" class="btn btn-overlay" titlehover="switch mode">
-            <div>
-              <span class="icon">
-                <img src="./assets/icons/aperture.svg"/>
-              </span>
-            </div>
-          </button>
-          <button id="plus-btn" class="btn" titlehover="more colors">
-            <span class="icon">
-              <img src="./assets/icons/plus.svg"/>
-            </span>
-          </button>
-          <button id="minus-btn" class="btn" titlehover="less colors">
-            <span class="icon">
-              <img src="./assets/icons/minus.svg"/>
-            </span>
-          </button>
+			<meta name="description" content="ColorFlow - a monochrome and complementary palette generator.">
+			<meta name="keywords" content="Palette, color, web app, palette generator, css generator, css, web tool, color tool">
+			<meta name="author" content="Manerr">
+			<meta name="robots" content="index, follow">
+			<meta property="og:type" content="website">
+			<meta property="og:url" content="https://manerr.github.io/colorflow">
+			<meta property="og:title" content="Paul Thorel - Développeur Fullstack Junior">
+			<meta property="og:description" content="ColorFlow - a monochrome and complementary palette generator.">
+			<meta property="og:image" content="./assets/screenshot.png">
+			<meta name="twitter:card" content="summary_large_image">
+			<meta name="twitter:url" content="https://manerr.github.io/colorflow">
+			<meta name="twitter:title" content="ColorFlow - palette generator.">
+			<meta name="twitter:description" content="ColorFlow - a monochrome and complementary palette generator.">
+			<meta name="twitter:image" content="./assets/screenshot.png">
+			<link rel="icon" href="./favicon.ico" sizes="any">
 
-          <div class="menu-btn">
-            <button id="download-btn" class="btn" titlehover="download palette">
-              <span class="icon">
-                <img src="./assets/icons/download.svg"/>
-              </span>
-            </button>
-            <div class="modern-select" id="file-export-select">
-              <button id="json-download-btn" class="btn-inner btn">
-                <span class="icon">
-                  <img src="./assets/icons/code.svg"/>
-                </span>
-                <span class="btn-desc">json</span>    
-              </button>
 
-              <button id="csv-download-btn" class="btn-inner btn">
-                <span class="icon">
-                  <img src="./assets/icons/table.svg"/>
-                </span>
-                <span class="btn-desc">csv</span>    
-              </button>
-              <button id="pdf-download-btn" class="btn-inner btn">
-                <span class="icon">
-                  <img src="./assets/icons/printer.svg"/>
-                </span>
-                <span class="btn-desc">pdf</span>    
-              </button>
-              <!-- <button id="png-download-btn" class="btn-inner btn">
-                <span class="icon">
-                  <img src="./assets/icons/image.svg"/>
-                </span>
-                <span class="btn-desc">png</span>    
-              </button> -->
 
-            </div>
+		
 
-          </div>
+		</head>
+		<body>
 
-          <button id="open-file-btn" class="btn" titlehover="load a palette">
-            <span class="icon">
-              <img src="./assets/icons/upload.svg"/>
-            </span>
-            <input type="file" id="open-file-input"/>
-          </button>
 
-          <button id="print-btn" class="btn" titlehover="print">
-            <span class="icon">
-              <img src="./assets/icons/printer.svg"/>
-            </span>
-          </button>
+				<nav id="action-nav">
 
-          
-        </nav>
-        <div class="palette-output">
-            <div class="palette-column"></div>
-            <div class="palette-column"></div>
-            <div class="palette-column"></div>
-            <div class="palette-column"></div>
-            <div class="palette-column"></div>
-        </div>
+					<h2>ColorFlow</h2>
 
-        
 
-        <!-- <script src="./jquery-3.7.1.min.js"></script> -->
-        <script src="script.js" type="module" defer></script>
+					<a class="btn" id="github-link" href="https://github.com/manerr/colorflow" target="_blank" rel="noopener" titlehover="Source code">
+						<div class="o-hidden">
+							<span class="icon">
+								<img src="./assets/icons/github.svg"/>
+							</span>
+	
+						</div>
+					</a>
+					<div class="color-picker-container btn" id="picker-box" titlehover="select a base color">
+						<div class="o-hidden">
+							<input id="base-color-picker" type="color" value="#4CADFF" class="color-inputs" />
+						</div>
+					</div>
+					<button id="gen-btn" class="btn" titlehover="random palette">
+						<span class="icon">
+							<img src="./assets/icons/shuffle.svg"/>
+						</span>
+					</button>
+					<button id="switch-mode-btn" class="btn btn-overlay" titlehover="switch mode">
+						<div>
+							<span class="icon">
+								<img src="./assets/icons/aperture.svg"/>
+							</span>
+						</div>
+					</button>
+					<button id="plus-btn" class="btn" titlehover="more colors">
+						<span class="icon">
+							<img src="./assets/icons/plus.svg"/>
+						</span>
+					</button>
+					<button id="minus-btn" class="btn" titlehover="less colors">
+						<span class="icon">
+							<img src="./assets/icons/minus.svg"/>
+						</span>
+					</button>
 
-    </body>
+					<div class="menu-btn">
+						<button id="download-btn" class="btn" titlehover="download palette">
+							<span class="icon">
+								<img src="./assets/icons/download.svg"/>
+							</span>
+						</button>
+						<div class="modern-select" id="file-export-select">
+							<button id="json-download-btn" class="btn-inner btn">
+								<span class="icon">
+									<img src="./assets/icons/code.svg"/>
+								</span>
+								<span class="btn-desc">json</span>    
+							</button>
+
+							<button id="csv-download-btn" class="btn-inner btn">
+								<span class="icon">
+									<img src="./assets/icons/table.svg"/>
+								</span>
+								<span class="btn-desc">csv</span>    
+							</button>
+							<button id="pdf-download-btn" class="btn-inner btn">
+								<span class="icon">
+									<img src="./assets/icons/printer.svg"/>
+								</span>
+								<span class="btn-desc">pdf</span>    
+							</button>
+							<!-- <button id="png-download-btn" class="btn-inner btn">
+								<span class="icon">
+									<img src="./assets/icons/image.svg"/>
+								</span>
+								<span class="btn-desc">png</span>    
+							</button> -->
+
+						</div>
+
+					</div>
+
+					<button id="open-file-btn" class="btn" titlehover="load a palette">
+						<span class="icon">
+							<img src="./assets/icons/upload.svg"/>
+						</span>
+						<input type="file" id="open-file-input"/>
+					</button>
+
+					<button id="print-btn" class="btn" titlehover="print">
+						<span class="icon">
+							<img src="./assets/icons/printer.svg"/>
+						</span>
+					</button>
+
+					
+				</nav>
+				<div class="palette-output">
+						<div class="palette-column"></div>
+						<div class="palette-column"></div>
+						<div class="palette-column"></div>
+						<div class="palette-column"></div>
+						<div class="palette-column"></div>
+				</div>
+
+				
+
+				<!-- <script src="./jquery-3.7.1.min.js"></script> -->
+				<script src="script.js" type="module" defer></script>
+
+		</body>
 </html>

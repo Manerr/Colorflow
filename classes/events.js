@@ -15,7 +15,10 @@ class events {
         this.trigger_download_menu = this.trigger_download_menu.bind(this);
         this.jsonImport = this.jsonImport.bind(this);
         this.jsonImportHandle = this.jsonImportHandle.bind(this);
-        
+    
+        this.pdfButton = this.pdfButton.bind(this);
+    
+
         document.addEventListener('keydown', this.handleSpacebar);
     }
 
@@ -67,18 +70,17 @@ class events {
     }
 
     jsonExport(){
-
+        this.trigger_download_menu();
         let palette = this.parent.palette;
         let paletteToExport = [];
-        this.parent.palette.forEach(color => {
+        palette.forEach(color => {
             paletteToExport.push(color.toJSONCompatible());
         });
 
         downloadFile("palette.json",JSON.stringify(paletteToExport,null,2),"application/json");   
     }
 
-    jsonImport(){
-            
+    jsonImport(){            
         let file_picker = this.parent.file_picker;
         let files = file_picker.files;
         if(files.length){
@@ -101,7 +103,6 @@ class events {
             URL.revokeObjectURL(jsonfile);
         
         
-        
         }
 
 
@@ -116,6 +117,7 @@ class events {
     }
 
     csvExport(){
+        this.trigger_download_menu();
 
         let palette = this.parent.palette;
         let paletteToExport = '"Color name",Hexadecimal,Red,Green,Blue,Hue,Saturation,Value\n';
@@ -126,6 +128,11 @@ class events {
         downloadFile("palette.csv",paletteToExport,"text/csv");   
 
 
+    }
+
+    pdfButton(){
+        this.trigger_download_menu();
+        this.printButton();
     }
 
     printButton(){
