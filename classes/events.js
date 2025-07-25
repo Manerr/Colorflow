@@ -45,7 +45,8 @@ class events {
 
     picker(e) {
         const hex = e.target.value.toUpperCase();
-        window.currentColor = new Color(hex, 'hex');
+        this.parent.currentColor = new Color(hex, 'hex');
+        window.currentColor = this.parent.currentColor;
         this.parent.applyPalette(hex);
     }
 
@@ -60,7 +61,11 @@ class events {
             this.parent.switchModeBtn.classList.remove('active');
             this.parent.switchModeBtn.title = 'Mode: Monochromatic';
         }
-        this.parent.applyPalette(this.parent.currentColor.hex);
+
+        //trying to fix a dumb bug.... still investigating
+        const hex = this.parent.colorPicker.value.toUpperCase();
+        this.parent.currentColor = new Color(hex, 'hex');
+        this.parent.applyPalette(hex);
     }
 
     trigger_download_menu(){
